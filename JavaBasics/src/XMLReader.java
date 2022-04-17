@@ -79,27 +79,27 @@ public class XMLReader {
             String id_element = listElements.get(i).getAttribute("id");
 
             writer.writeStartElement("personFlow");
-            writer.writeAttribute("id", String.format("p%da", nums.get(i)));
-            writer.writeAttribute("begin", "1");
-            writer.writeAttribute("period", "5");
-            writer.writeAttribute("impatience", String.format("%.2f", impatience));
+                writer.writeAttribute("id", String.format("p%da", nums.get(i)));
+                writer.writeAttribute("begin", "1");
+                writer.writeAttribute("period", "5");
+                writer.writeAttribute("impatience", String.format("%.2f", impatience));
 
-            writer.writeStartElement("walk");
-            writer.writeAttribute("from", id_element);
-            writer.writeAttribute("to", "-" + id_element);
-            writer.writeEndElement();
+                writer.writeStartElement("walk");
+                    writer.writeAttribute("from", id_element);
+                    writer.writeAttribute("to", "-" + id_element);
+                writer.writeEndElement();
             writer.writeEndElement();
 
             writer.writeStartElement("personFlow");
-            writer.writeAttribute("id", String.format("p%db", nums.get(i)));
-            writer.writeAttribute("begin", "1");
-            writer.writeAttribute("period", "5");
-            writer.writeAttribute("impatience", String.format("%.2f", 1 - impatience));
+                writer.writeAttribute("id", String.format("p%db", nums.get(i)));
+                writer.writeAttribute("begin", "1");
+                writer.writeAttribute("period", "5");
+                writer.writeAttribute("impatience", String.format("%.2f", 1 - impatience));
 
-            writer.writeStartElement("walk");
-            writer.writeAttribute("from", "-" + id_element);
-            writer.writeAttribute("to", id_element);
-            writer.writeEndElement();
+                writer.writeStartElement("walk");
+                    writer.writeAttribute("from", "-" + id_element);
+                    writer.writeAttribute("to", id_element);
+                writer.writeEndElement();
             writer.writeEndElement();
         }
 
